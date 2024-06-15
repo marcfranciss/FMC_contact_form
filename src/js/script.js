@@ -14,8 +14,6 @@ $(document).ready(function () {
     $(`#${errorId}`).attr("aria-hidden", "true");
   };
   const isBlank = (errorId, inputId) => {
-    console.log(errorId);
-    console.log(inputId);
     $(`#${inputId}`).addClass("alert");
     $(`#${errorId}`).text("This field is required");
     $(`#${errorId}`).attr("aria-hidden", "false");
@@ -162,9 +160,11 @@ $(document).ready(function () {
       $(".toast").addClass("show");
       setTimeout(function () {
         $(".toast").removeClass("show");
+        location.reload(true);
       }, 3000);
     }
-    // showSuccess();
+
+    // validating if there are still inputs with error
     errorsExist
       ? event.preventDefault() // Prevent form submission
       : showSuccess();
