@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(148, 38%, 91%);
+  font-family: "Karla";
+  font-weight: 700;
+  scroll-behavior: smooth;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert {
+  border: hsl(0, 66%, 54%) solid 1px !important;
+}
+
+.error-message {
+  color: hsl(0, 66%, 54%);
+}
+
+.contact-form {
+  background-color: hsl(0, 0%, 100%);
+  padding: 2.5rem;
+  margin: auto;
+  max-width: 46rem; /* 736px */
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+.contact-form h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.contact-form label {
+  font-weight: 400;
+  font-size: 1.125rem;
+  font-family: "Karla";
+  margin-block: 1rem;
+}
+.contact-form input[type=text] {
+  text-transform: capitalize;
+}
+.contact-form input[type=text], .contact-form input[type=email] {
+  max-height: 1.6875rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border: hsl(148, 38%, 91%) solid 1px;
+  outline: none;
+  padding: 1.5rem 1.333rem;
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+.contact-form input[type=text]:hover, .contact-form input[type=text]:focus, .contact-form input[type=email]:hover, .contact-form input[type=email]:focus {
+  border: hsl(169, 82%, 27%) solid 1px;
+}
+.contact-form textarea {
+  width: 100%;
+  min-height: 5.0625rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border: hsl(148, 38%, 91%) solid 1px;
+  outline: none;
+  padding: 1.5rem 1.333rem;
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 1.125rem;
+  resize: vertical;
+  overflow: hidden;
+}
+.contact-form textarea:hover, .contact-form textarea:focus {
+  border: hsl(169, 82%, 27%) solid 1px;
+}
+@media (max-width: 40rem) {
+  .contact-form {
+    padding: 1rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+}
+
+.form-labler {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.form-labler__fname, .form-labler__lname, .form-labler__email, .form-labler__radio, .form-labler__option, .form-labler__message, .form-labler__agreement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-labler .radio-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-labler .radio-container .radio-option {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: hsl(148, 38%, 91%) solid 1px;
+  width: 100%;
+  gap: 1.333rem;
+  border-radius: 0.5rem;
+}
+.form-labler .radio-container .radio-option:has(input:checked) {
+  background-color: hsl(148, 38%, 91%);
+  border: hsl(169, 82%, 27%) solid 1px;
+}
+.form-labler .radio-container .radio-option:hover {
+  border: hsl(169, 82%, 27%) solid 1px;
+  cursor: pointer;
+}
+.form-labler .radio-container input[type=radio] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: hsl(169, 82%, 27%);
+  background-color: hsl(169, 82%, 27%);
+}
+.form-labler .radio-container input[type=radio]:hover {
+  cursor: pointer;
+}
+.form-labler .radio-container label {
+  margin: 0;
+}
+.form-labler .radio-container label:hover {
+  cursor: pointer;
+}
+@media (max-width: 40rem) {
+  .form-labler .radio-container {
+    flex-direction: column;
+  }
+}
+.form-labler input[type=checkbox] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: hsl(169, 82%, 27%);
+  background-color: hsl(169, 82%, 27%);
+  outline: none;
+}
+.form-labler input[type=checkbox]:hover {
+  border: hsl(169, 82%, 27%) solid 1px;
+}
+@media (max-width: 40rem) {
+  .form-labler {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.form-labler .checkbox-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  margin-block: 1rem;
+  font-size: 1rem;
+}
+.form-labler .checkbox-container:hover, .form-labler .checkbox-container label:hover, .form-labler .checkbox-container input:hover {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Karla";
+  margin-block: 1rem;
+  padding: 1rem;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  transition: transform 0.8s ease-in-out;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(0.99);
+}
+
+.toast {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  top: 1.5rem;
+  min-width: 317px;
+  background-color: hsl(169, 82%, 27%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: hsl(0, 0%, 100%);
+}
+.toast .toast-header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.toast p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
