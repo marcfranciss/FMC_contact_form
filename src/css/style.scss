@@ -170,10 +170,11 @@ button {
     font-weight: $fw-700;
     font-size: 1.125rem;
     border-radius: 0.5rem;
-    transition: transform 0.8s ease-in-out;
+    transition: all 0.4s ease-in-out;
     &:hover {
         cursor: pointer;
         transform: scale(0.99);
+        opacity: 0.7;
     }
         }
 .toast {
